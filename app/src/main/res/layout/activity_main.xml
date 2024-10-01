@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <!-- Changed the ID to avoid conflict -->
+    <TextView
+        android:id="@+id/rootTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/root_word"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/rootEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/favorite_pet"
+        android:textSize="25dp"
+        android:layout_below="@id/rootTextView" />
+
+    <TextView
+        android:id="@+id/Modifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/company_name"
+        android:textSize="20dp"
+        android:layout_below="@id/rootEdit" />
+
+    <EditText
+        android:id="@+id/ModifierEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/facebook"
+        android:textSize="30dp"
+        android:layout_below="@id/Modifier" />
+
+    <TextView
+        android:id="@+id/DateOfBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_of_birth"
+        android:textSize="20dp"
+        android:layout_below="@id/ModifierEdit" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/DateOfBirth" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:layout_below="@id/datePicker"
+        android:onClick="encodePassword"/>
+</RelativeLayout>
