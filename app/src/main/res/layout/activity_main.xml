@@ -5,13 +5,22 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <!-- Changed the ID to avoid conflict -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+
     <TextView
         android:id="@+id/rootTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/root_word"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:layout_below="@+id/toolbar"/>
 
     <EditText
         android:id="@+id/rootEdit"
@@ -34,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/facebook"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_below="@id/Modifier" />
 
     <TextView
@@ -45,17 +54,36 @@
         android:textSize="20dp"
         android:layout_below="@id/ModifierEdit" />
 
-    <DatePicker
-        android:id="@+id/datePicker"
+
+
+    <Button
+        android:id="@+id/pickDate"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="📅"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/DateOfBirth"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@color/dark_gray"
+        />
+
+
+    <TextView
+        android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/DateOfBirth" />
+        android:text="TextView"
+        android:layout_toRightOf="@id/pickDate"
+        android:layout_below="@id/DateOfBirth"
+        />
 
     <Button
         android:id="@+id/submitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/submit"
-        android:layout_below="@id/datePicker"
-        android:onClick="encodePassword"/>
+        android:layout_below="@id/pickDate"
+        />
 </RelativeLayout>
