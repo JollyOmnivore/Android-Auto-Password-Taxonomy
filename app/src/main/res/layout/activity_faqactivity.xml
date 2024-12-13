@@ -8,6 +8,16 @@
     android:orientation="vertical"
     tools:context=".FAQActivity">
 
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+
     <TextView
         android:id="@+id/header"
         android:layout_width="wrap_content"
@@ -15,12 +25,99 @@
         android:textSize="30dp"
         android:textAlignment="center"
         android:layout_gravity="center"
-        android:text="How our passwords are made" />
+        android:textAppearance="@color/black"
+        android:textStyle="bold"
+        android:text="@string/how_our_passwords_are_made" />
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/lets_start_with_this_example_password" />
+    <TextView
+        android:id="@+id/textviewForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/user_filled_in_as_follows_n_root_example_n_company_github_n_date_of_birth_13_12_2024" />
+    <TextView
+        android:id="@+id/examplePass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:text="@string/ghexample36_37" />
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/first_is_the_modifier_company" />
+    <TextView
+        android:id="@+id/textview3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/this_is_created_from_the_1st_and_4th_letters_of_the_company_modifier_name_and_is_uppercase" />
+    <TextView
+        android:id="@+id/textview4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/next_your_root_word_is_next_and_is_unchanged_n_the_root_word_being_example" />
 
-        android:text="How our passwords are made" />
+    <TextView
+        android:id="@+id/textview5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/next_is_the_first_number" />
+    <TextView
+        android:id="@+id/textview6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/this_is_generated_from_your_date_of_birth_plus_your_birth_years_distance_from_2000" />
+
+    <TextView
+        android:id="@+id/textview8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/next_is_the_which_is_constant_between_passwords" />
+
+
+    <TextView
+        android:id="@+id/textview9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/this_is_generated_from_your_month_of_birth_plus_your_birth_years_distance_from_2000" />
+
+    <TextView
+        android:id="@+id/textview10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/next_another_which_is_constant_between_passwords" />
+
+    <TextView
+        android:id="@+id/textview11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/and_thats_it_you_ve_created_a_password_which_will_thorw_off_hackers_who_have_bought_your_personal_data" />
+
 </LinearLayout>

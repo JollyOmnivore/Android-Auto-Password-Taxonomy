@@ -16,7 +16,7 @@ import kotlin.math.abs
 
 lateinit var rootEditText: EditText
 lateinit var modifierEditText: EditText
-lateinit var dateOfBirth: DatePicker
+
 lateinit var submitButton : Button
 lateinit var pickDate : Button
 lateinit var resultTextView: TextView
@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         if(FormData.dayOfBirth != ""){
             rootEditText.setText(FormData.root)
             modifierEditText.setText(FormData.company)
+            resultTextView.setText("${FormData.dayOfBirth}/${FormData.monthOfBirth}/${FormData.yearOfBirth}")
         }
 
 
@@ -95,9 +96,6 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-
-
-
             }
             else{
                 Toast.makeText(this,"Please enter Data of Birth", Toast.LENGTH_SHORT).show()
@@ -115,13 +113,13 @@ class MainActivity : AppCompatActivity() {
 
         return when(item.itemId){
             R.id.itemA -> {
-                Toast.makeText(this,"A was clicked", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this,"A was clicked", Toast.LENGTH_SHORT).show()
                 val intent = Intent(applicationContext, FAQActivity::class.java)
                 startActivity(intent)
                 return true
             }
             R.id.itemB -> {
-                Toast.makeText(this,"A was clicked", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this,"B was clicked", Toast.LENGTH_SHORT).show()
                 val intent = Intent(applicationContext, PasswordVaultActivity::class.java)
                 startActivity(intent)
                 return true

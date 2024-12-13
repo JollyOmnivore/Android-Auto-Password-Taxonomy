@@ -43,13 +43,13 @@ class DateFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
     }
 
     override fun onDateSet(view: DatePicker, year: Int, month: Int, dayOfMonth: Int) {
-
+        val fixedMonth = month+1
         FormData.yearOfBirth = year.toString()
-        FormData.monthOfBirth = month.toString()
+        FormData.monthOfBirth = fixedMonth.toString()//starts at 0
         FormData.dayOfBirth = dayOfMonth.toString()
 
         val intent = Intent(requireContext(), MainActivity::class.java)
-            startActivity(intent)
+        startActivity(intent)
         }
 
 

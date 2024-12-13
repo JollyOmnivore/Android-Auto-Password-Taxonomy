@@ -11,4 +11,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="save_to_vault">Save to Vault</string>
+    <string name="how_our_passwords_are_made">How our passwords are made</string>
+    <string name="and_thats_it_you_ve_created_a_password_which_will_thorw_off_hackers_who_have_bought_your_personal_data">And thats it! You\'ve created a password which will thorw off hackers who have bought your personal data</string>
+    <string name="next_another_which_is_constant_between_passwords">Next another ? which is constant between passwords.</string>
+    <string name="this_is_generated_from_your_month_of_birth_plus_your_birth_years_distance_from_2000">This is generated from your month of birth plus your birth years distance from 2000.</string>
+    <string name="next_is_the_which_is_constant_between_passwords">Next is the ? which is constant between passwords.</string>
+    <string name="this_is_generated_from_your_date_of_birth_plus_your_birth_years_distance_from_2000">This is generated from your date of birth plus your birth years distance from 2000.</string>
+    <string name="next_is_the_first_number">Next is the first number.</string>
+    <string name="next_your_root_word_is_next_and_is_unchanged_n_the_root_word_being_example">Next your Root word is next and is unchanged\n the Root word being: example</string>
+    <string name="this_is_created_from_the_1st_and_4th_letters_of_the_company_modifier_name_and_is_uppercase">This is created from the 1st and 4th letters of the company/modifier name and is uppercase</string>
+    <string name="first_is_the_modifier_company">First is the modifier/Company</string>
+    <string name="ghexample36_37">GHexample36?37?</string>
+    <string name="user_filled_in_as_follows_n_root_example_n_company_github_n_date_of_birth_13_12_2024">User filled in as follows: \n Root: example \n Company: GitHub \n Date of Birth: 13/12/2024</string>
+    <string name="lets_start_with_this_example_password">Lets start with this example password</string>
 </resources>

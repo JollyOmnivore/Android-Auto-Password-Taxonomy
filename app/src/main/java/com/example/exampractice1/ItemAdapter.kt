@@ -10,11 +10,21 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ItemAdapter(var cursor: Cursor): RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+class ItemAdapter(var cursor: Cursor,private val itemAdapterListener: ItemAdapterListener): RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+
+    interface  ItemAdapterListener{
+        fun click(position: Int)
+    }
+
 
     lateinit var databaseHelper : DatabaseHelper
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+    class ViewHolder(itemView:View,private val itemAdapterListener: ItemAdapterListener) : RecyclerView.ViewHolder(itemView) {
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                itemAdapterListener.click(position)
+            }
+        }
 
         //private val textViewName: TextView = itemView.findViewById(R.id.textViewName)
 
@@ -36,6 +46,8 @@ class ItemAdapter(var cursor: Cursor): RecyclerView.Adapter<ItemAdapter.ViewHold
 
 
     }
+
+
     fun changeCursor(newCursor: Cursor) {//swap needed to update the recycler view
         if (this.cursor != newCursor) {
             this.cursor.close()
@@ -48,7 +60,7 @@ class ItemAdapter(var cursor: Cursor): RecyclerView.Adapter<ItemAdapter.ViewHold
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_layout, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(view,itemAdapterListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

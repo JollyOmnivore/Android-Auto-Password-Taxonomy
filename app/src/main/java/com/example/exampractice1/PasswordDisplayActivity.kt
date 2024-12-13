@@ -52,6 +52,7 @@ class PasswordDisplayActivity : AppCompatActivity() {
             val clip = ClipData.newPlainText("Password", password)
             // Set the clip to the clipboard
             clipboard.setPrimaryClip(clip)
+
             Toast.makeText(this,"Password Copied to Clipboard", Toast.LENGTH_SHORT).show()
 
         }

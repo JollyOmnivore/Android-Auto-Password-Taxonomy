@@ -3,16 +3,16 @@ package com.example.exampractice1
 
 import android.content.ContentValues
 import android.content.Context
-import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
+import android.widget.Toast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlin.random.Random
+
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     var isInserting = false
 
@@ -107,9 +107,9 @@ fun insertItem(company: String, password: String) { // better insert which overr
             isInserting = false
             Log.d("DB", "Insert/Update operation completed for Company: $company")
         }
+
     }
 }
-
 
 
 
@@ -129,7 +129,7 @@ fun insertItem(company: String, password: String) { // better insert which overr
     }
 
 
-    fun getAscendingRedValueColors(): Cursor {
+    fun getAscendingCompany(): Cursor {// not needed yet turn it into sort alphabetically
         val db = this.readableDatabase
         val cursor = db.query(
             "passwordVault",
@@ -150,6 +150,68 @@ fun insertItem(company: String, password: String) { // better insert which overr
         db.close()
 
     }
+
+    fun getPasswordByPrimaryKey(position: Int, sortType: String): Array<String> {
+        Log.d("DB", position.toString())
+        var password = ""
+
+
+        if(sortType == "recent") {
+            val db = this.readableDatabase
+            val cursor = db.query(
+                "passwordVault",
+                arrayOf("_id", "Company", "Password"),
+                null,
+                null,
+                null,
+                null,
+                null
+            )
+            cursor.moveToPosition(position)
+            val passwordLocation = cursor.getColumnIndexOrThrow("Password")
+            val companyLocation = cursor.getColumnIndexOrThrow("Company")
+            Log.d("DB", passwordLocation.toString())
+            val selectedPassword = cursor.getString(passwordLocation)
+            val selectedCompany = cursor.getString(companyLocation)
+
+            Log.d("DB", selectedPassword.toString())
+            Log.d("DB", selectedCompany.toString())
+            //cursor.close()
+            db.close()
+            return arrayOf(selectedCompany, selectedPassword)
+        }
+
+        else if (sortType == "DESC"){
+            val db = this.readableDatabase
+            val cursor = db.query(
+                "passwordVault",
+                arrayOf("_id", "Company", "Password"),
+                null,
+                null,
+                null,
+                null,
+                "Company DESC" // https://www.sqlitetutorial.net/sqlite-order-by/
+            )
+            //this section took embarrassingly long
+            cursor.moveToPosition(position)
+            val passwordLocation = cursor.getColumnIndexOrThrow("Password")
+            val companyLocation = cursor.getColumnIndexOrThrow("Company")
+            Log.d("DB", passwordLocation.toString())
+            val selectedPassword = cursor.getString(passwordLocation)
+            val selectedCompany = cursor.getString(companyLocation)
+
+            Log.d("DB", selectedPassword.toString())
+            Log.d("DB", selectedCompany.toString())
+            //cursor.close()
+            db.close()
+            return arrayOf(selectedCompany, selectedPassword)
+        }
+
+
+        return arrayOf("error", "error")
+    }
+
+
 
 
 
